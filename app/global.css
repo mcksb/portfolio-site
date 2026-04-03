@@ -1,0 +1,193 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Backgrounds */
+  --color-bg-100: #1A1A1E;
+  --color-bg-200: #222228;
+  --color-bg-300: #2A2A32;
+  --color-bg-400: #33333C;
+  --color-bg-500: #3E3E48;
+
+  /* Sage — primary */
+  --color-primary-100: #1A3830;
+  --color-primary-200: #2A5C4A;
+  --color-primary-300: #4A8C74;
+  --color-primary-400: #7EC4A8;
+  --color-primary-500: #A8D8C4;
+  --color-primary-600: #D4EDE4;
+
+  /* Dusty rose — secondary */
+  --color-secondary-100: #3A1E26;
+  --color-secondary-200: #6B3344;
+  --color-secondary-300: #C47E96;
+  --color-secondary-400: #D8A8BB;
+  --color-secondary-500: #EDD4DC;
+
+  /* Powder blue — tertiary */
+  --color-tertiary-100: #1A2535;
+  --color-tertiary-200: #2A3F5C;
+  --color-tertiary-300: #4A7299;
+  --color-tertiary-400: #7AAFD4;
+  --color-tertiary-500: #A8CDE0;
+  --color-tertiary-600: #D4E8F2;
+
+  /* Neutrals — text scale */
+  --color-neutral-100: #3E3E48;
+  --color-neutral-200: #6B6B78;
+  --color-neutral-300: #9898A4;
+  --color-neutral-400: #C8C8D0;
+  --color-neutral-500: #EEEEF2;
+
+  /* Typography */
+  --font-family-sans: "Geist Mono", ui-monospace, monospace;
+  --font-family-mono: "Geist Mono", ui-monospace, monospace;
+
+  /* Border radius */
+  --radius-tag: 4px;
+  --radius-btn: 8px;
+  --radius-card: 14px;
+  --radius-pill: 9999px;
+
+  /* Transition durations */
+  --duration-micro: 150ms;
+  --duration-transition: 250ms;
+  --duration-reveal: 400ms;
+}
+
+::selection {
+  background-color: #47a3f3;
+  color: #fefefe;
+}
+
+:root {
+  --sh-class: #2d5e9d;
+  --sh-identifier: #354150;
+  --sh-sign: #8996a3;
+  --sh-string: #007f7a;
+  --sh-keyword: #e02518;
+  --sh-comment: #a19595;
+  --sh-jsxliterals: #6266d1;
+  --sh-property: #e25a1c;
+  --sh-entity: #e25a1c;
+}
+
+html {
+  min-width: 360px;
+  color-scheme: light;
+}
+
+.prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .anchor:after {
+  @apply text-neutral-300 dark:text-neutral-700;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
+.prose pre {
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+}
+
+.prose code {
+  @apply px-1 py-0.5 rounded-lg;
+}
+
+.prose pre code {
+  @apply p-0;
+  border: initial;
+  line-height: 1.5;
+}
+
+.prose code span {
+  @apply font-medium;
+}
+
+.prose img {
+  /* Don't apply styles to next/image */
+  @apply m-0;
+}
+
+.prose p {
+  @apply my-4 text-neutral-800 dark:text-neutral-200;
+}
+
+.prose h1 {
+  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h2 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h3 {
+  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose h4 {
+  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+}
+
+.prose strong {
+  @apply font-medium;
+}
+
+.prose ul {
+  @apply list-disc pl-6;
+}
+
+.prose ol {
+  @apply list-decimal pl-6;
+}
+
+.prose > :first-child {
+  /* Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Remove Safari input shadow on mobile */
+input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.title {
+  text-wrap: balance;
+}
