@@ -1,4 +1,4 @@
-import 'app/globals.css';
+import 'app/global.css';
 import { Navbar } from 'app/components/layout/header';
 import { Footer } from 'app/components/layout/footer';
 
