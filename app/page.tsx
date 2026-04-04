@@ -2,7 +2,7 @@ import { Button } from 'app/components/common/button';
 import { Card } from 'app/components/common/card';
 import { Hero } from 'app/components/common/hero';
 import { Pill } from 'app/components/common/pill';
-import { Typewriter } from './components/common/typewriter';
+import { Typewriter } from 'app/components/common/typewriter';
 import { VscCircleSmallFilled } from 'react-icons/vsc';
 import { VscChevronRight } from "react-icons/vsc";
 
