@@ -8,10 +8,10 @@ export function Card({ title, content }) {
                 <Pill content={'2024'} colour="secondary" />
                 <Pill content={'Work'} colour="tertiary" />
             </div>
-            <p className="text-neutral-400 whitespace-pre-line text-[15px] font-[500] pb-1">
+            <p className="text-neutral-400 whitespace-pre-line text-base sm:text-lg font-[500] pb-1">
                 {title}
             </p>
-            <div className="text-neutral-300 whitespace-pre-line text-[14px] font-400 pb-1">
+            <div className="text-neutral-300 whitespace-pre-line text-sm sm:text-base font-[400] pb-1">
                 {content}
             </div>
         </div>

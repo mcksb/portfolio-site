@@ -3,11 +3,13 @@ import { Card } from 'app/components/common/card';
 import { Hero } from 'app/components/common/hero';
 import { Pill } from 'app/components/common/pill';
 import { Typewriter } from 'app/components/common/typewriter';
+import { contentfulTypewriter } from './util/contentful/client';
 import { VscCircleSmallFilled } from 'react-icons/vsc';
 import { VscChevronRight } from "react-icons/vsc";
 
-export default function Page() {
-  
+export default async function Page() {
+  const phrases = await contentfulTypewriter('homepage');
+
   return (
   <>
     <div className="flex items-center gap-4">
@@ -16,24 +18,19 @@ export default function Page() {
       </p>
     </div>
     
-    <div className="text-neutral-500 text-[28px] font-[400] font-normal whitespace-pre-line min-h-24">
+    <div className="text-neutral-500 text-[18px] sm:text-[28px] font-[400] font-[400] min-h-16 sm:min-h-24 py-4">
       <h1>
         Junior developer,
       </h1>
       <h1 className="flex items-center gap-1">
-        <VscChevronRight className="text-neutral-200 text-[24px]" />
+        <VscChevronRight className="text-neutral-200" />
         <Typewriter 
-          phrases={[
-            'building for the web',
-            'based in Dublin',
-            'focused on React + Node.js',
-            'interested in how systems behave',
-            ]}
+          phrases={phrases}
           />
       </h1>
     </div>
     
-    <ul className="flex items-center gap-2 text-[14px] font-[400] text-neutral-300 mb-4">
+    <ul className="flex items-center gap-2 text-xs font-[400] text-neutral-300">
       <li>
         React
       </li>
@@ -51,15 +48,17 @@ export default function Page() {
       </li>
     </ul>
     
-    <section>
+    <div className="py-4">
       <Hero 
-        title={'// this is a hero'}
-        content={'empty'}
+        title={'// current focus'}
+        content={`const stack = {frontend: "React + Next.js", backend: "Node.js"}`}
       />
-    </section>
-    
-    <div className="grid grid-cols-2 items-center gap-4 my-8">
+    </div>
+    <Pill content='Projects' colour='primary' />
+    <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-2 py-4">
       <Card title={'Weather app'} content={'Real-time data with location search.'} />
+      <Card title={'REST API'} content={'Auth and CRUD with Express.'} />
+      <Card title={'REST API'} content={'Auth and CRUD with Express.'} />
       <Card title={'REST API'} content={'Auth and CRUD with Express.'} />
       <Card title={'REST API'} content={'Auth and CRUD with Express.'} />
       <Card title={'REST API'} content={'Auth and CRUD with Express.'} />

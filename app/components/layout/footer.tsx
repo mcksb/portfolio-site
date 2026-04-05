@@ -18,7 +18,7 @@ function ArrowIcon() {
 export function Footer() {
   return (
     <footer className="flex justify-between px-4 py-1">
-      <ul className="flex items-center gap-4">
+      <ul className="flex items-center gap-4 text-[12px] sm:text-[14px]">
         <li>
           <a
             className="text-neutral-400 flex items-center gap-2"
@@ -42,7 +42,7 @@ export function Footer() {
           </a>
         </li>
       </ul>
-      <p className="text-neutral-200">
+      <p className="text-neutral-200 text-[12px] sm:text-[14px]">
         © {new Date().getFullYear()} MIT Licensed
       </p>
     </footer>

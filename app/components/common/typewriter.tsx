@@ -8,12 +8,11 @@ interface TypewriterProps {
 export function Typewriter({ phrases }: TypewriterProps): JSX.Element {
 
     const [phrase, setPhrase] = useState('');
-    const tracker = useRef({ index: 0, phraseIndex: 0, paused: false })
+    const tracker = useRef({ index: 0, phraseIndex: 0, paused: false, complete: false })
 
     useEffect(() => {
         const string = setInterval(() => {
-                setPhrase(phrases[tracker.current.phraseIndex].slice(0, tracker.current.index))
-
+                setPhrase(phrases[tracker.current.phraseIndex].slice(0, tracker.current.index));
                 if (tracker.current.index >= phrases[tracker.current.phraseIndex].length) {
                     if (!tracker.current.paused) {
                         tracker.current.paused = true
@@ -28,9 +27,7 @@ export function Typewriter({ phrases }: TypewriterProps): JSX.Element {
                     }
                 };
                 tracker.current.index++
-                return
-            }, 100);
-
+            }, 50);
         return () => {
             clearInterval(string)
         }

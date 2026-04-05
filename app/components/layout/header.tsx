@@ -15,10 +15,10 @@ const navItems = {
 export function Navbar() {
   return (
     <nav id="nav" className="flex items-center justify-between px-6 py-4">
-      <div className="text-neutral-500 font-medium">
+      <div className="text-neutral-500 font-medium text-[14px] sm:text-[16px]">
         shaun.dev
       </div> 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 text-[14px] sm:text-[16px]">
         {Object.entries(navItems).map(([path, { name }]) => {
           return (
             <Link
