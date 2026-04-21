@@ -17,31 +17,7 @@ function ArrowIcon() {
 
 export function Footer() {
   return (
-    <footer className="flex justify-between px-4 py-1">
-      <ul className="flex items-center gap-4 text-[12px] sm:text-[14px]">
-        <li>
-          <a
-            className="text-neutral-400 flex items-center gap-2"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://github.com/mcksb"
-          >
-            <ArrowIcon />
-            <p className="">github</p>
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-neutral-400 flex items-center gap-2"
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://vercel.com/templates/next.js/portfolio-starter-kit"
-          >
-            <ArrowIcon />
-            <p className="">view source</p>
-          </a>
-        </li>
-      </ul>
+    <footer className="flex justify-end px-4 py-1">
       <p className="text-neutral-200 text-[12px] sm:text-[14px]">
         © {new Date().getFullYear()} MIT Licensed
       </p>

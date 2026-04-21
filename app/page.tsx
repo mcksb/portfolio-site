@@ -9,6 +9,11 @@ import { VscChevronRight } from "react-icons/vsc";
 
 export default async function Page() {
   const phrases = await contentfulTypewriter('homepage');
+  const cards = [
+    {id: 1, title: 'Weather app', content: 'Real-time data with location search'},
+    {id: 2, title: 'REST API', content: 'Auth and CRUD with Express'},
+    {id: 3, title: 'Blog', content: 'CMS powered blog with analytics'},
+  ];
 
   return (
   <>
@@ -24,7 +29,7 @@ export default async function Page() {
       </h1>
       <h1 className="flex items-center gap-1">
         <VscChevronRight className="text-neutral-200" />
-        <Typewriter 
+        <Typewriter
           phrases={phrases}
           />
       </h1>
@@ -56,12 +61,9 @@ export default async function Page() {
     </div>
     <Pill content='Projects' colour='primary' />
     <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-2 py-4">
-      <Card title={'Weather app'} content={'Real-time data with location search.'} />
-      <Card title={'REST API'} content={'Auth and CRUD with Express.'} />
-      <Card title={'REST API'} content={'Auth and CRUD with Express.'} />
-      <Card title={'REST API'} content={'Auth and CRUD with Express.'} />
-      <Card title={'REST API'} content={'Auth and CRUD with Express.'} />
-      <Card title={'REST API'} content={'Auth and CRUD with Express.'} />
+      {cards.map(card =>
+        <Card title={card.title} content={card.content} key={card.id} />
+      )}
     </div>
   </>
   )
